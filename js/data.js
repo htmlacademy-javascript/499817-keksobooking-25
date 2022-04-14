@@ -1,3 +1,4 @@
+import {Feature, TYPE_OF_ROOM, PHOTOS} from './consts.js';
 import {
   removeRepeatingValues,
   generateRandomIntegerNumberFromRange,
@@ -5,29 +6,6 @@ import {
   getRandomValueOfArray,
   generateRandomLengthArray
 } from './utils.js';
-
-const TYPE_OF_ROOM = [
-  'palace',
-  'flat',
-  'house',
-  'bungalow',
-  'hotel'
-];
-
-const FEATURES = [
-  'wifi',
-  'dishwasher',
-  'parking',
-  'washer',
-  'elevator',
-  'conditioner'
-];
-
-const PHOTOS = [
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
-];
 
 const generateImageNumber = () => {
   let imageNumber = generateRandomIntegerNumberFromRange(1, 10).toString();
@@ -39,7 +17,7 @@ const generateImageNumber = () => {
 
 const generateAuthor = function() {
   return {
-    avatar: `img:/avatars/user${generateImageNumber()}.png`, // от 1 до 10, перед однозначными числами ставится 0, т.е. 01 02 и т.д.
+    avatar: `img/avatars/user${generateImageNumber()}.png`, // от 1 до 10, перед однозначными числами ставится 0, т.е. 01 02 и т.д.
   };
 };
 
@@ -53,7 +31,7 @@ const generateOffer = function() {
     guests: generateRandomIntegerNumberFromRange(1, 20),
     checkin: `1${generateRandomIntegerNumberFromRange(2, 4)}:00`,
     checkout: `1${generateRandomIntegerNumberFromRange(2, 4)}:00`,
-    features: removeRepeatingValues(generateRandomLengthArray(FEATURES)),
+    features: removeRepeatingValues(generateRandomLengthArray(Feature)),
     description: 'Моковое описание',
     photos: generateRandomLengthArray(PHOTOS),
   };
