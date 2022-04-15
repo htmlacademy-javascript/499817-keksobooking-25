@@ -1,4 +1,4 @@
-import {Feature, TYPE_OF_ROOM, PHOTOS} from './consts.js';
+import {FEATURES, TYPE_OF_ROOM, PHOTOS} from './consts.js';
 import {
   removeRepeatingValues,
   generateRandomIntegerNumberFromRange,
@@ -31,7 +31,7 @@ const generateOffer = function() {
     guests: generateRandomIntegerNumberFromRange(1, 20),
     checkin: `1${generateRandomIntegerNumberFromRange(2, 4)}:00`,
     checkout: `1${generateRandomIntegerNumberFromRange(2, 4)}:00`,
-    features: removeRepeatingValues(generateRandomLengthArray(Feature)),
+    features: removeRepeatingValues(generateRandomLengthArray(FEATURES)),
     description: 'Моковое описание',
     photos: generateRandomLengthArray(PHOTOS),
   };

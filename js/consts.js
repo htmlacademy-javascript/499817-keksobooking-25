@@ -14,7 +14,7 @@ const typeListDict = {
   'hotel': 'Отель',
 };
 
-const Feature = [
+const FEATURES = [
   'wifi',
   'dishwasher',
   'parking',
@@ -30,4 +30,4 @@ const PHOTOS = [
 ];
 
 
-export {typeListDict, Feature, PHOTOS, TYPE_OF_ROOM};
+export {typeListDict, FEATURES, PHOTOS, TYPE_OF_ROOM};
